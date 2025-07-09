@@ -37,6 +37,7 @@ const Login = () => {
     e.preventDefault();
     setError("");
 
+    
     // Ensures the email and password fields are not empty
     if (!email.trim() || !password.trim()) {
       setError("Email and password are required.");
@@ -44,7 +45,7 @@ const Login = () => {
     }
 
     // Ensures the email is in a valid format
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email.trim())) {
       setError("Email address is not valid.");
       return;
     }
