@@ -49,7 +49,7 @@ const Dashboard = () => {
           <section className="panic-history-section bg-white p-6 border border-neutral-300">
             <h2 className="text-2xl font-bold text-black mb-6">
               Panic History{" "}
-              <span className="text-neutral-500">(10 Most Recent)</span>
+              <span className="text-black font-normal">(10 Most Recent)</span>
             </h2>
             <PanicHistory key={refreshTrigger} />
           </section>
