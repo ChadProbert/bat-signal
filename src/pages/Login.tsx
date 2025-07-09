@@ -23,10 +23,10 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const { token, saveToken } = useContext(AuthContext)!;
+  const { token, expiresAt, saveToken } = useContext(AuthContext)!;
 
-  // Redirect to dashboard if user is already authenticated
-  if (token) {
+  // Redirect to dashboard if user is already authenticated AND the token is still valid
+  if (token && expiresAt && Date.now() < expiresAt) {
     return <Navigate to="/dashboard" replace />;
   }
 

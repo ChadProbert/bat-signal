@@ -8,10 +8,14 @@ interface ProtectedRouteProps {
 
 // Ensures that the user is authenticated before accessing the route
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { token, expiresAt } = useContext(AuthContext)!;
+  const { token, expiresAt, clearToken } = useContext(AuthContext)!;
 
   // Redirects to login if the user is not authenticated or if the token has expired
-  if (!token || Date.now() > expiresAt!) {
+  if (!token || (expiresAt && Date.now() > expiresAt)) {
+    // If token is expired, clear it to avoid stale data causing redirect loops
+    if (token) {
+      clearToken();
+    }
     return <Navigate to="/" replace />;
   }
 
