@@ -122,7 +122,7 @@ const CreatePanicAlert = ({ onPanicCreated }: CreatePanicAlertProps) => {
                 value={formData.latitude}
                 onChange={handleInputChange}
                 className="block w-full bg-white px-3 py-1.5 pl-10 text-base text-black outline-1 -outline-offset-1 outline-neutral-300 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-black sm:text-sm/6"
-                placeholder="e.g. 40.7128"
+                placeholder="e.g. 20.000000"
               />
             </div>
           </div>
@@ -145,7 +145,7 @@ const CreatePanicAlert = ({ onPanicCreated }: CreatePanicAlertProps) => {
                 value={formData.longitude}
                 onChange={handleInputChange}
                 className="block w-full bg-white px-3 py-1.5 pl-10 text-base text-black outline-1 -outline-offset-1 outline-neutral-300 placeholder:text-neutral-400 focus:outline-2 focus:-outline-offset-2 focus:outline-black sm:text-sm/6"
-                placeholder="e.g. -74.0060"
+                placeholder="e.g. -20.000000"
               />
             </div>
           </div>
