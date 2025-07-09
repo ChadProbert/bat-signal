@@ -18,47 +18,28 @@ React + TypeScript + Vite + Tailwind CSS + Axios + React Router + Context API
 - Node.js
 - npm (Node Package Manager)
 
-### Clone the repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/ChadProbert/bat-signal.git
 ```
 
-### Installation
+### 2. Install Project Dependencies
 ```bash
 cd bat-signal
 # and
 npm install
 ```
 
-### Environment Variables
+### 3. Setup Environment Variables
 Create a `.env` file in the project root with the following variables:
 ```
-VITE_API_URL=Replace_with_your_api_url
+VITE_API_URL=replace_with_api_url
 ```
 
-### Running the App
+### 4. Running the App
 ```bash
 npm run dev
 ```
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Build for Production
-```bash
-npm run build
-# or
-yarn build
-```
-
-## Environment Variables
-Create a `.env` file in the project root with the following variables:
-```
-VITE_API_URL=Replace_with_your_api_url
-```
-
-## Project Structure
-- `src/` — Main app source code
-  - `components/` — UI components (Panic button, History, etc.)
-  - `pages/` — Route pages (Login, Dashboard, NotFound)
-  - `auth/` — Authentication context/provider
-  - `api/` — API service logic
-  - `utils/` — Utility functions
+### 5. Open in Browser
+Visit **[http://localhost:5173](http://localhost:5173)** in your browser.
