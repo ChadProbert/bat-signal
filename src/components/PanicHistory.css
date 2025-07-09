@@ -1,0 +1,7 @@
+/* Desktop + Tablet View
+- Ensures the history list items extend the full width of the container */
+@media (min-width: 768px) {
+    .history-container {
+        width: 100%;
+    }
+}
