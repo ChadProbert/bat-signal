@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import AuthContext from "../auth/AuthContext";
 
@@ -10,12 +10,16 @@ interface ProtectedRouteProps {
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const { token, expiresAt, clearToken } = useContext(AuthContext)!;
 
-  // Redirects to login if the user is not authenticated or if the token has expired
-  if (!token || (expiresAt && Date.now() > expiresAt)) {
-    // If token is expired, clear it to avoid stale data causing redirect loops
-    if (token) {
-      clearToken();
+  // Auth is invalid if the token is null or the token has expired
+  const invalidAuth = !token || (expiresAt !== null && Date.now() > expiresAt)
+
+  useEffect(() => {
+    if (invalidAuth) {
+      clearToken()
     }
+  }, [invalidAuth, clearToken])
+
+  if (invalidAuth) {
     return <Navigate to="/" replace />;
   }
 

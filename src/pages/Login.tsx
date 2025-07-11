@@ -54,7 +54,7 @@ const Login = () => {
     try {
       const response = await axios.post("/login", { email, password });
       const token = response.data.data.api_access_token;
-      const expiresIn = response.data.data.expires_in || 3600; // Defaults to 1 hour if not provided by the backend
+      const expiresIn = 3600000; // 1 hour in milliseconds
       saveToken(token, expiresIn); // Saves the token and expiry time to AuthContext
       navigate("/dashboard");
     } catch (err: unknown) {

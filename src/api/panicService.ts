@@ -2,16 +2,16 @@ import axios from "./axios.ts";
 
 // The structure of the response from the API
 export interface PanicResponse {
+  created_at: string;
+  details: string;
   id: number;
+  latitude: string;
+  longitude: string;
+  panic_type: string;
   status: {
     id: number;
     name: string;
   };
-  panic_type: string;
-  latitude: string;
-  longitude: string;
-  details: string;
-  created_at: string;
 }
 
 // The structure of the request to the API
